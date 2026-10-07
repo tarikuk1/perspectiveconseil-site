@@ -3,525 +3,551 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Perspective Conseil — Accompagnement expérience client et IA</title>
-<meta name="description" content="Perspective Conseil accompagne les directions de la relation client : diagnostic, transformation, pilotage de la performance et intégration de l'intelligence artificielle.">
+<title>Perspective Conseil — Conseil en centres de contact</title>
+<meta name="description" content="Perspective Conseil accompagne les entreprises dans le pilotage de leurs centres de contact internalisés ou externalisés : audit, pilotage des prestataires, performance, qualité, IA et retour sur investissement.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root{
-  --night:#0a1128; --night-2:#111a38; --ink:#0f172a; --ink-2:#334155; --muted:#64748b;
-  --cream:#f8f6f1; --white:#fff; --line:#e7e3da; --line-dark:rgba(255,255,255,.1);
-  --a1:#ff6b3d; --a2:#ffb547; --violet:#7c6cff;
-  --grad:linear-gradient(120deg,var(--a1),var(--a2));
-  --r:22px;
+  --navy:#0b1f3a; --navy2:#13294b; --ink:#101828; --txt:#344054; --mute:#667085;
+  --bg:#ffffff; --soft:#f5f3ee; --line:#e6e2d8;
+  --acc:#e0782f; --acc2:#f3b25b; --teal:#14897f; --green:#12a150; --red:#d9483b;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--txt);background:var(--bg);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-h1,h2,h3{line-height:1.1;letter-spacing:-.025em;font-weight:800}
-.serif{font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
-.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--a1)}
-.tag::before{content:"";width:22px;height:2px;background:var(--grad);border-radius:2px}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:15px;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;border:0;font-family:inherit}
-.btn-primary{background:var(--grad);color:#1a0d05;box-shadow:0 10px 30px -10px rgba(255,107,61,.6)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(255,107,61,.7)}
-.btn-light{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18)}
-.btn-light:hover{background:rgba(255,255,255,.16)}
-.btn-dark{background:var(--night);color:#fff}
-.btn-dark:hover{background:#1c2a55}
-.arrow{transition:transform .2s}
-.btn:hover .arrow{transform:translateX(4px)}
+img{display:block;max-width:100%}
+h1,h2,h3,h4{color:var(--ink);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.it{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--acc)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:10px;font-weight:700;font-size:15px;font-family:inherit;border:0;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s}
+.btn-acc{background:var(--acc);color:#fff;box-shadow:0 10px 24px -10px rgba(224,120,47,.7)}
+.btn-acc:hover{background:#c9661f;transform:translateY(-2px)}
+.btn-line{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+.btn-line:hover{background:var(--navy);color:#fff}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy2)}
 
 /* NAV */
-header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
-header.scrolled{background:rgba(10,17,40,.82);backdrop-filter:blur(14px);border-color:var(--line-dark)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:78px;color:#fff}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.02em}
-.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--grad);display:grid;place-items:center;color:#1a0d05;font-weight:800;font-size:16px}
-.menu{display:flex;gap:34px;list-style:none}
-.menu a{font-size:15px;font-weight:500;color:rgba(255,255,255,.78);transition:color .2s}
-.menu a:hover{color:#fff}
-.burger{display:none;background:none;border:0;color:#fff;cursor:pointer;width:42px;height:42px}
-.burger span{display:block;width:22px;height:2px;background:#fff;margin:5px auto;transition:.3s}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:18px;color:var(--navy);letter-spacing:-.02em}
+.logo i{width:36px;height:36px;border-radius:9px;background:var(--navy);display:grid;place-items:center;color:#fff;font-style:normal;font-family:"Instrument Serif",serif;font-size:24px}
+.menu{display:flex;gap:30px;list-style:none}
+.menu a{font-size:15px;font-weight:600;color:var(--txt)}
+.menu a:hover{color:var(--acc)}
+.burger{display:none;background:none;border:0;width:42px;height:42px;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:var(--navy);margin:5px auto}
 
 /* HERO */
-.hero{position:relative;background:var(--night);color:#fff;padding:170px 0 120px;overflow:hidden}
-.hero::before{content:"";position:absolute;width:820px;height:820px;right:-260px;top:-300px;background:radial-gradient(circle,rgba(255,107,61,.35),transparent 62%);filter:blur(10px)}
-.hero::after{content:"";position:absolute;width:700px;height:700px;left:-300px;bottom:-380px;background:radial-gradient(circle,rgba(124,108,255,.35),transparent 62%)}
-.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 60% 40%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 60% 40%,#000 30%,transparent 75%)}
-.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
-.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);font-size:14px;color:rgba(255,255,255,.85);margin-bottom:28px}
-.pill b{background:var(--grad);color:#1a0d05;padding:3px 10px;border-radius:999px;font-size:12px}
-.hero h1{font-size:clamp(42px,5.6vw,74px);margin-bottom:26px}
-.hero h1 .serif{font-weight:400}
-.hero p.lead{font-size:20px;color:rgba(255,255,255,.72);max-width:580px;margin-bottom:40px}
-.ctas{display:flex;gap:14px;flex-wrap:wrap}
-.hero-proof{display:flex;gap:36px;margin-top:56px;flex-wrap:wrap}
-.hero-proof div{font-size:14px;color:rgba(255,255,255,.6)}
-.hero-proof strong{display:block;font-size:30px;color:#fff;font-weight:800;letter-spacing:-.02em}
+.hero{background:linear-gradient(180deg,#fff 0%,var(--soft) 100%);padding:70px 0 90px;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(40px,5vw,66px);margin-bottom:22px}
+.hero .lead{font-size:19px;max-width:560px;margin-bottom:34px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.proof{display:flex;gap:34px;margin-top:44px;padding-top:28px;border-top:1px solid var(--line);flex-wrap:wrap}
+.proof b{display:block;font-size:28px;color:var(--navy);letter-spacing:-.02em}
+.proof span{font-size:14px;color:var(--mute)}
+.visual{position:relative}
+.visual .ph{border-radius:22px;overflow:hidden;aspect-ratio:4/4.3;box-shadow:0 40px 80px -40px rgba(11,31,58,.55)}
+.visual .ph img{width:100%;height:100%;object-fit:cover}
+.kcard{position:absolute;background:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 20px 40px -18px rgba(11,31,58,.35);border:1px solid var(--line);min-width:170px}
+.kcard small{display:block;font-size:12px;color:var(--mute);font-weight:600}
+.kcard b{font-size:24px;color:var(--ink);letter-spacing:-.02em}
+.kcard em{font-style:normal;font-size:12.5px;font-weight:700;color:var(--green);margin-left:6px}
+.kc1{top:26px;left:-34px}
+.kc2{bottom:120px;right:-26px}
+.kc3{bottom:-24px;left:40px;display:flex;gap:14px;align-items:center}
+.spark{width:110px;height:36px}
+.tagline{position:absolute;top:16px;right:16px;font-size:11px;font-weight:700;background:rgba(11,31,58,.75);color:#fff;padding:5px 10px;border-radius:6px;letter-spacing:.04em}
 
-.journey{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:28px;backdrop-filter:blur(12px);box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
-.journey-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
-.journey-head span{font-size:13px;color:rgba(255,255,255,.6)}
-.journey-head b{font-size:16px}
-.j-step{display:flex;gap:14px;align-items:flex-start;padding:14px;border-radius:16px;transition:background .3s}
-.j-step+.j-step{margin-top:6px}
-.j-step.on{background:rgba(255,255,255,.08)}
-.j-dot{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800;background:rgba(255,255,255,.1);color:#fff}
-.j-step.done .j-dot{background:var(--grad);color:#1a0d05}
-.j-step.on .j-dot{background:#fff;color:var(--night);box-shadow:0 0 0 6px rgba(255,181,71,.25)}
-.j-step h4{font-size:15px;font-weight:700}
-.j-step p{font-size:13px;color:rgba(255,255,255,.6)}
-.j-bar{height:6px;border-radius:6px;background:rgba(255,255,255,.1);margin-top:22px;overflow:hidden}
-.j-bar i{display:block;height:100%;width:62%;background:var(--grad);border-radius:6px;animation:grow 2.4s ease-out}
-@keyframes grow{from{width:0}}
-.j-foot{display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.6);margin-top:10px}
+/* STRIP */
+.strip{background:var(--navy);color:#cfd8e8;padding:22px 0}
+.strip .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-weight:600;font-size:15px}
+.strip span{display:flex;align-items:center;gap:10px}
+.strip span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--acc2)}
 
-/* SECTIONS */
-section{padding:120px 0}
-.head{max-width:720px;margin-bottom:64px}
-.head h2{font-size:clamp(34px,4.2vw,54px);margin:18px 0 18px}
-.head p{font-size:19px;color:var(--ink-2)}
-.center{text-align:center;margin-left:auto;margin-right:auto}
-.center .tag{justify-content:center}
+section{padding:110px 0}
+.head{max-width:740px;margin-bottom:56px}
+.head h2{font-size:clamp(32px,4vw,50px);margin-bottom:16px}
+.head p{font-size:18px}
+.ctr{text-align:center;margin-left:auto;margin-right:auto}
 
-/* PROBLEMS */
-.problems{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.prob{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:transform .3s,box-shadow .3s}
-.prob:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(15,23,42,.25)}
-.prob .ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#fff1ea;margin-bottom:20px}
-.prob .ico svg{width:24px;height:24px;stroke:var(--a1)}
-.prob h3{font-size:19px;margin-bottom:8px;letter-spacing:-.015em}
-.prob p{font-size:15px;color:var(--muted)}
+/* MODELS */
+.models{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.model{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;transition:box-shadow .3s,transform .3s}
+.model:hover{transform:translateY(-4px);box-shadow:0 30px 60px -34px rgba(11,31,58,.45)}
+.model .img{height:250px;position:relative}
+.model .img img{width:100%;height:100%;object-fit:cover}
+.model .img span{position:absolute;left:18px;bottom:18px;background:#fff;color:var(--navy);font-weight:800;font-size:13px;padding:7px 12px;border-radius:8px;letter-spacing:.03em}
+.model .body{padding:32px}
+.model h3{font-size:26px;margin-bottom:10px}
+.model ul{list-style:none;margin-top:18px;display:grid;gap:10px}
+.model li{display:flex;gap:12px;font-size:15.5px}
+.model li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;background:#fdf0e6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-6.5' fill='none' stroke='%23e0782f' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") center/13px no-repeat}
+
+/* KPI */
+.kpi-sec{background:var(--soft)}
+.kgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px}
+.board{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px}
+.board-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;gap:12px;flex-wrap:wrap}
+.board-h h3{font-size:19px}
+.leg{display:flex;gap:16px;font-size:13px;color:var(--mute);font-weight:600}
+.leg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.board svg{width:100%;height:auto}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.m{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
+.m small{font-size:13px;color:var(--mute);font-weight:600}
+.m .v{display:flex;align-items:baseline;gap:8px;margin:6px 0 10px}
+.m .v b{font-size:30px;color:var(--ink);letter-spacing:-.02em}
+.m .v em{font-style:normal;font-size:13px;font-weight:800}
+.up{color:var(--green)}.dn{color:var(--green)}
+.bar{height:8px;border-radius:8px;background:#efebe2;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,var(--acc),var(--acc2));width:0;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.note{font-size:13px;color:var(--mute);margin-top:18px}
+
+/* ROI */
+.roi{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 80px -50px rgba(11,31,58,.5)}
+.roi-in{padding:40px;background:#fff}
+.roi-out{padding:40px;background:var(--navy);color:#cfd8e8}
+.roi-out h3{color:#fff}
+.field{margin-bottom:22px}
+.field label{display:flex;justify-content:space-between;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.field label output{color:var(--acc)}
+input[type=range]{width:100%;accent-color:var(--acc);height:6px}
+.hyp{font-size:13px;color:var(--mute);background:var(--soft);border-radius:12px;padding:14px 16px;margin-top:6px}
+.big{font-size:clamp(40px,4.4vw,58px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1;margin:10px 0 6px}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:26px 0}
+.res div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:16px}
+.res small{font-size:12.5px;color:#9fb0cc}
+.res b{display:block;font-size:22px;color:#fff;margin-top:2px}
+.bars2{display:grid;gap:10px;margin-top:6px}
+.b2{display:grid;grid-template-columns:120px 1fr 90px;gap:10px;align-items:center;font-size:13.5px}
+.b2 .t{height:12px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden}
+.b2 .t i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--acc),var(--acc2));transition:width .5s}
+.b2 span:last-child{text-align:right;color:#fff;font-weight:700}
+
+/* SERVICES */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.s{padding:30px;border-radius:20px;border:1px solid var(--line);background:#fff;transition:border-color .3s,box-shadow .3s}
+.s:hover{border-color:#f1c9a6;box-shadow:0 24px 50px -32px rgba(11,31,58,.4)}
+.s .ic{width:48px;height:48px;border-radius:12px;background:#fdf0e6;display:grid;place-items:center;margin-bottom:18px}
+.s .ic svg{width:24px;height:24px;stroke:var(--acc)}
+.s h3{font-size:20px;margin-bottom:8px}
+.s p{font-size:15px;color:var(--mute)}
+
+/* METHOD */
+.method{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.method .ph{border-radius:22px;overflow:hidden;aspect-ratio:4/5}
+.method .ph img{width:100%;height:100%;object-fit:cover}
+.steps{display:grid;gap:4px}
+.step{display:grid;grid-template-columns:54px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.step .n{width:54px;height:54px;border-radius:14px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800}
+.step:nth-child(odd) .n{background:var(--acc)}
+.step h4{font-size:19px;margin-bottom:2px}
+.step .w{font-size:12.5px;font-weight:700;color:var(--acc);letter-spacing:.06em;text-transform:uppercase}
+.step p{font-size:15px;color:var(--mute)}
 
 /* OFFERS */
-.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
-.offer{position:relative;background:var(--white);border:1px solid var(--line);border-radius:28px;padding:36px;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
-.offer:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(15,23,42,.3)}
-.offer.feat{background:var(--night);color:#fff;border-color:transparent}
-.offer.feat::before{content:"";position:absolute;inset:-1px;border-radius:29px;padding:1px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-.badge{position:absolute;top:22px;right:22px;font-size:12px;font-weight:700;background:var(--grad);color:#1a0d05;padding:5px 12px;border-radius:999px}
-.offer .dur{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--a1);margin-bottom:14px}
-.offer.feat .dur{color:var(--a2)}
-.offer h3{font-size:26px;margin-bottom:12px}
-.offer > p{color:var(--ink-2);font-size:16px;margin-bottom:24px}
-.offer.feat > p{color:rgba(255,255,255,.7)}
-.offer ul{list-style:none;margin-bottom:30px;flex:1}
-.offer li{display:flex;gap:12px;font-size:15px;padding:8px 0;color:var(--ink-2)}
-.offer.feat li{color:rgba(255,255,255,.85)}
-.offer li::before{content:"";flex:none;width:20px;height:20px;margin-top:2px;border-radius:50%;background:#fff1ea url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-6.5' fill='none' stroke='%23ff6b3d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
-.offer.feat li::before{background-color:rgba(255,255,255,.1)}
-.offer .btn{justify-content:center}
-.offer .out{font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:16px;margin-top:-10px;margin-bottom:24px}
-.offer.feat .out{color:rgba(255,255,255,.55);border-color:rgba(255,255,255,.15)}
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.o{display:flex;flex-direction:column;padding:34px;border-radius:22px;border:1px solid var(--line);background:#fff}
+.o.f{background:var(--navy);border-color:var(--navy);color:#cfd8e8}
+.o.f h3{color:#fff}
+.o .d{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+.o.f .d{color:var(--acc2)}
+.o h3{font-size:25px;margin-bottom:8px}
+.o ul{list-style:none;margin:20px 0 26px;flex:1}
+.o li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.o.f li{border-color:rgba(255,255,255,.12)}
+.o .btn{justify-content:center}
 
-/* PROCESS */
-.process{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.timeline{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
-.timeline::before{content:"";position:absolute;top:27px;left:6%;right:6%;height:2px;background:linear-gradient(90deg,var(--a1),var(--a2),var(--violet));opacity:.35}
-.tl{position:relative;text-align:left}
-.tl .n{position:relative;z-index:1;width:56px;height:56px;border-radius:18px;background:var(--night);color:#fff;display:grid;place-items:center;font-weight:800;font-size:18px;margin-bottom:22px;box-shadow:0 12px 30px -12px rgba(10,17,40,.6)}
-.tl:nth-child(odd) .n{background:var(--grad);color:#1a0d05}
-.tl h3{font-size:18px;margin-bottom:6px}
-.tl .when{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--a1);margin-bottom:8px}
-.tl p{font-size:14.5px;color:var(--muted)}
-
-/* AI */
-.ai{background:var(--night);color:#fff;position:relative;overflow:hidden}
-.ai::before{content:"";position:absolute;width:900px;height:900px;left:50%;top:-500px;transform:translateX(-50%);background:radial-gradient(circle,rgba(124,108,255,.28),transparent 60%)}
-.ai .wrap{position:relative}
-.ai .head p{color:rgba(255,255,255,.7)}
-.ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.ai-card{border:1px solid var(--line-dark);background:rgba(255,255,255,.04);border-radius:var(--r);padding:30px;transition:background .3s,border-color .3s}
-.ai-card:hover{background:rgba(255,255,255,.07);border-color:rgba(255,181,71,.4)}
-.ai-card .k{font-size:13px;font-weight:700;color:var(--a2);margin-bottom:14px;letter-spacing:.05em;text-transform:uppercase}
-.ai-card h3{font-size:21px;margin-bottom:10px}
-.ai-card p{font-size:15px;color:rgba(255,255,255,.65)}
-.guard{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.guard span{font-size:14px;padding:9px 16px;border-radius:999px;border:1px solid var(--line-dark);color:rgba(255,255,255,.8);background:rgba(255,255,255,.03)}
-
-/* WHY */
-.why{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.founder{position:relative;background:var(--night);color:#fff;border-radius:32px;padding:44px;overflow:hidden}
-.founder::after{content:"";position:absolute;width:380px;height:380px;right:-140px;bottom:-160px;background:radial-gradient(circle,rgba(255,107,61,.45),transparent 65%)}
-.founder .q{position:relative;z-index:1;font-family:Fraunces,serif;font-style:italic;font-size:28px;line-height:1.3;margin-bottom:30px}
-.founder .who{position:relative;z-index:1;display:flex;align-items:center;gap:14px}
-.avatar{width:52px;height:52px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-weight:800;color:#1a0d05}
-.who b{display:block}
-.who span{font-size:14px;color:rgba(255,255,255,.6)}
-.pillars{display:grid;grid-template-columns:1fr 1fr;gap:28px 32px;margin-top:40px}
-.pillars h4{font-size:17px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
-.pillars h4::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--grad)}
-.pillars p{font-size:15px;color:var(--muted)}
+/* FOUNDER */
+.fd{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.fd blockquote{font-family:"Instrument Serif",serif;font-size:clamp(28px,3vw,40px);line-height:1.2;color:var(--ink);margin:10px 0 24px}
+.sig{display:flex;align-items:center;gap:14px}
+.sig .av{width:58px;height:58px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800;font-size:18px}
+.sig b{display:block;color:var(--ink)}
+.sig span{font-size:14px;color:var(--mute)}
+.pl{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pl div{padding:22px;border-radius:16px;background:var(--soft)}
+.pl b{display:block;color:var(--ink);font-size:17px;margin-bottom:4px}
+.pl span{font-size:14.5px;color:var(--mute)}
 
 /* FAQ */
-.faq{max-width:820px;margin:0 auto}
-.faq details{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:0 26px;margin-bottom:12px;transition:box-shadow .3s}
-.faq details[open]{box-shadow:0 20px 40px -26px rgba(15,23,42,.3)}
-.faq summary{list-style:none;cursor:pointer;padding:22px 0;font-weight:700;font-size:17px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.faq{max-width:840px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 0;font-weight:700;font-size:18px;color:var(--ink);display:flex;justify-content:space-between;gap:20px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#fff1ea;color:var(--a1);font-size:20px;transition:transform .3s}
+.faq summary::after{content:"+";color:var(--acc);font-size:24px;line-height:1;transition:transform .3s}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{padding:0 0 22px;color:var(--ink-2);font-size:16px}
+.faq p{padding:0 0 22px}
 
 /* CONTACT */
-.cta{padding:0 0 120px}
-.cta-box{position:relative;background:var(--night);color:#fff;border-radius:36px;padding:72px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:56px}
-.cta-box::before{content:"";position:absolute;width:700px;height:700px;right:-250px;top:-300px;background:radial-gradient(circle,rgba(255,107,61,.4),transparent 62%)}
-.cta-box > *{position:relative}
-.cta-box h2{font-size:clamp(32px,3.8vw,48px);margin:18px 0}
-.cta-box p{color:rgba(255,255,255,.7);margin-bottom:28px}
-.coords{display:grid;gap:14px;font-size:16px}
-.coords a,.coords div{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.9)}
-.coords svg{width:20px;height:20px;stroke:var(--a2);flex:none}
-form{display:grid;gap:14px}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-label{font-size:13px;font-weight:600;color:rgba(255,255,255,.7);display:grid;gap:6px}
-input,select,textarea{font-family:inherit;font-size:15px;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:14px 16px;outline:none;transition:border-color .2s,background .2s}
-input:focus,select:focus,textarea:focus{border-color:var(--a2);background:rgba(255,255,255,.1)}
-select option{color:var(--ink)}
-textarea{min-height:120px;resize:vertical}
-.fine{font-size:12px;color:rgba(255,255,255,.5)}
+.ct{display:grid;grid-template-columns:1fr 1fr;border-radius:28px;overflow:hidden;background:var(--navy);color:#cfd8e8}
+.ct .l{padding:56px;position:relative;background:linear-gradient(180deg,rgba(11,31,58,.55),rgba(11,31,58,.92)),url("https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=70&auto=format&fit=crop") center/cover}
+.ct h2{color:#fff;font-size:clamp(30px,3.4vw,44px);margin-bottom:16px}
+.ct .co{display:grid;gap:12px;margin-top:28px;font-weight:600}
+.ct .co a,.ct .co div{display:flex;gap:12px;align-items:center;color:#fff}
+.ct .co svg{width:20px;height:20px;stroke:var(--acc2);flex:none}
+.ct form{padding:56px;display:grid;gap:12px;background:#fff}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ct label{display:grid;gap:6px;font-size:13px;font-weight:700;color:var(--ink)}
+.ct input,.ct select,.ct textarea{font-family:inherit;font-size:15px;border:1px solid var(--line);border-radius:10px;padding:13px 14px;outline:none;background:#fff;color:var(--ink)}
+.ct input:focus,.ct select:focus,.ct textarea:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(224,120,47,.15)}
+.ct textarea{min-height:110px;resize:vertical}
+.fine{font-size:12.5px;color:var(--mute)}
 
-/* FOOTER */
-footer{background:#060b1c;color:rgba(255,255,255,.6);padding:64px 0 32px;font-size:14px}
-.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;margin-bottom:40px}
-footer h4{color:#fff;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
-footer .logo{color:#fff;margin-bottom:14px}
-footer a:hover{color:#fff}
+footer{background:#07152a;color:#93a3bd;padding:60px 0 30px;font-size:14px}
+.fc{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:34px}
+footer h4{color:#fff;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+footer .logo{color:#fff;margin-bottom:12px}
+footer .logo i{background:var(--acc)}
 details.ml summary{cursor:pointer;color:#fff}
 details.ml div{margin-top:12px;line-height:1.75}
-.fbottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.fb{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
-/* REVEAL */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
 .rv.in{opacity:1;transform:none}
-.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.j-bar i{animation:none}}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 
-/* RESPONSIVE */
-@media (max-width:1020px){
-  .hero-inner,.why,.cta-box{grid-template-columns:1fr}
-  .problems{grid-template-columns:1fr 1fr}
-  .offers,.ai-grid{grid-template-columns:1fr}
-  .timeline{grid-template-columns:1fr;gap:28px}
-  .timeline::before{top:0;bottom:0;left:27px;right:auto;width:2px;height:auto}
-  .tl{display:grid;grid-template-columns:56px 1fr;gap:0 20px}
-  .tl .n{grid-row:span 3;margin:0}
-  .fcols{grid-template-columns:1fr}
+@media (max-width:1040px){
+  .hero-in,.models,.kgrid,.roi,.method,.fd,.ct{grid-template-columns:1fr}
+  .svc,.offers{grid-template-columns:1fr 1fr}
+  .kc1{left:10px}.kc2{right:10px}
+  .method .ph{aspect-ratio:16/10}
+  .fc{grid-template-columns:1fr}
 }
 @media (max-width:820px){
-  .menu{position:fixed;inset:78px 0 auto 0;flex-direction:column;gap:0;background:rgba(10,17,40,.97);padding:12px 24px 24px;transform:translateY(-130%);transition:transform .35s}
+  .menu{position:fixed;inset:76px 0 auto;flex-direction:column;gap:0;background:#fff;padding:8px 24px 20px;transform:translateY(-140%);transition:transform .35s;border-bottom:1px solid var(--line)}
   .menu.open{transform:none}
-  .menu a{display:block;padding:14px 0;font-size:17px;border-bottom:1px solid var(--line-dark)}
+  .menu a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
   .burger{display:block}
   .nav .btn{display:none}
 }
-@media (max-width:600px){
+@media (max-width:620px){
   body{font-size:16px}
   .wrap{padding:0 16px}
-  .hero{padding:130px 0 80px}
-  section{padding:80px 0}
-  .problems,.pillars,.row2{grid-template-columns:1fr}
-  .cta-box{padding:40px 22px;border-radius:26px}
-  .founder{padding:32px}
-  .founder .q{font-size:23px}
-  .offer{padding:28px}
-  .hero-proof{gap:24px}
+  section{padding:76px 0}
+  .hero{padding:40px 0 70px}
+  .svc,.offers,.mini,.pl,.r2,.res{grid-template-columns:1fr}
+  .roi-in,.roi-out,.ct .l,.ct form{padding:28px 20px}
+  .kc2{display:none}
+  .kcard{min-width:0}
+  .b2{grid-template-columns:96px 1fr 76px}
 }
 </style>
 </head>
 <body>
 
-<header id="top">
+<header>
   <div class="wrap nav">
-    <a href="#" class="logo"><span class="logo-mark">P</span>Perspective Conseil</a>
+    <a href="#" class="logo"><i>P</i>Perspective Conseil</a>
     <ul class="menu" id="menu">
-      <li><a href="#accompagnements">Accompagnements</a></li>
+      <li><a href="#modeles">Accompagnement</a></li>
+      <li><a href="#resultats">Résultats</a></li>
+      <li><a href="#roi">Simulateur ROI</a></li>
       <li><a href="#methode">Méthode</a></li>
-      <li><a href="#ia">IA</a></li>
-      <li><a href="#pourquoi">Pourquoi nous</a></li>
-      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="btn btn-primary">Prendre rendez-vous <span class="arrow">→</span></a>
-    <button class="burger" id="burger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    <a href="#contact" class="btn btn-acc">Prendre rendez-vous</a>
+    <button class="burger" id="bg" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="grid-bg"></div>
-    <div class="wrap hero-inner">
-      <div>
-        <div class="pill rv"><b>Nouveau</b> Accompagnement IA pour centres de contact</div>
-        <h1 class="rv d1">Nous vous accompagnons vers une relation client <span class="serif grad-text">plus performante</span> et plus humaine.</h1>
-        <p class="lead rv d2">Diagnostic, transformation, pilotage et intelligence artificielle : Perspective Conseil se tient à vos côtés, de la première analyse jusqu'aux résultats mesurés.</p>
-        <div class="ctas rv d3">
-          <a href="#contact" class="btn btn-primary">Échanger sur votre projet <span class="arrow">→</span></a>
-          <a href="#accompagnements" class="btn btn-light">Voir nos accompagnements</a>
-        </div>
-        <div class="hero-proof rv d4">
-          <div><strong>20 ans+</strong>de pilotage opérationnel</div>
-          <div><strong>3 formats</strong>d'accompagnement</div>
-          <div><strong>1 interlocuteur</strong>du diagnostic aux résultats</div>
-        </div>
+<section class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <span class="eyebrow rv">Conseil en centres de contact</span>
+      <h1 class="rv d1">Votre centre de contact, <span class="it">plus performant</span> et mieux piloté.</h1>
+      <p class="lead rv d2">Que votre service client soit internalisé ou confié à un prestataire, Perspective Conseil vous accompagne pour améliorer la qualité, maîtriser les coûts et mesurer le retour sur investissement.</p>
+      <div class="ctas rv d2">
+        <a href="#roi" class="btn btn-acc">Simuler mon ROI →</a>
+        <a href="#modeles" class="btn btn-line">Notre accompagnement</a>
       </div>
-      <div class="journey rv d2" aria-hidden="true">
-        <div class="journey-head"><b>Votre parcours</b><span>Semaine 6 sur 12</span></div>
-        <div class="j-step done"><div class="j-dot">✓</div><div><h4>Diagnostic 360°</h4><p>Parcours, KPI et qualité analysés</p></div></div>
-        <div class="j-step done"><div class="j-dot">✓</div><div><h4>Feuille de route</h4><p>12 actions priorisées et chiffrées</p></div></div>
-        <div class="j-step on"><div class="j-dot">3</div><div><h4>Déploiement accompagné</h4><p>Ateliers équipes · grille qualité · IA</p></div></div>
-        <div class="j-step"><div class="j-dot">4</div><div><h4>Pilotage des résultats</h4><p>Revue mensuelle des indicateurs</p></div></div>
-        <div class="j-bar"><i></i></div>
-        <div class="j-foot"><span>Avancement</span><span>62 %</span></div>
+      <div class="proof rv d2">
+        <div><b>20 ans+</b><span>en direction de centres de contact</span></div>
+        <div><b>Interne &amp; externe</b><span>tous les modèles opérationnels</span></div>
+        <div><b>Indépendant</b><span>d'aucun prestataire ni éditeur</span></div>
       </div>
     </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="head rv">
-        <span class="tag">Vos enjeux</span>
-        <h2>Vous reconnaissez-vous dans l'une de ces situations ?</h2>
-        <p>Nous intervenons lorsque la relation client devient un sujet stratégique et que les équipes ont besoin d'un regard extérieur pour avancer.</p>
-      </div>
-      <div class="problems">
-        <div class="prob rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><h3>Des indicateurs qui se dégradent</h3><p>Taux de service, délais de réponse ou satisfaction qui glissent sans cause claire.</p></div>
-        <div class="prob rv d1"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Des coûts difficiles à maîtriser</h3><p>Productivité, dimensionnement et charge à réaligner avec les objectifs économiques.</p></div>
-        <div class="prob rv d2"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2 8 12.7 4 8.8 9.5 8z"/></svg></div><h3>Une qualité hétérogène</h3><p>Des réponses inégales d'un conseiller à l'autre, sans référentiel partagé.</p></div>
-        <div class="prob rv d3"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></div><h3>L'IA, sans savoir par où commencer</h3><p>Beaucoup de solutions, peu de visibilité sur les vrais gains et les risques.</p></div>
-      </div>
+    <div class="visual rv d1">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1626863905121-3b0c0ed7b94c?w=1100&q=75&auto=format&fit=crop" alt="Conseillères de centre de contact en poste"></div>
+      <div class="kcard kc1"><small>Taux de service</small><b>94 %</b><em>▲ +8 pts</em></div>
+      <div class="kcard kc2"><small>Satisfaction (CSAT)</small><b>4,6/5</b><em>▲ +0,5</em></div>
+      <div class="kcard kc3"><div><small>Coût par contact</small><b>−18 %</b></div>
+        <svg class="spark" viewBox="0 0 110 36" fill="none"><path d="M2 6 L18 9 L32 8 L46 15 L60 14 L74 22 L88 25 L108 32" stroke="#12a150" stroke-width="2.5" stroke-linecap="round"/></svg></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="accompagnements" style="padding-top:0">
-    <div class="wrap">
-      <div class="head center rv">
-        <span class="tag">Nos accompagnements</span>
-        <h2>Trois façons de <span class="serif grad-text">avancer ensemble</span></h2>
-        <p>Chaque format s'adapte à votre maturité et à vos contraintes. Vous pouvez démarrer par un diagnostic et poursuivre à votre rythme.</p>
-      </div>
-      <div class="offers">
-        <article class="offer rv">
-          <div class="dur">2 à 4 semaines</div>
-          <h3>Diagnostic express</h3>
-          <p>Un état des lieux objectif de votre relation client et des priorités claires pour agir.</p>
+<div class="strip"><div class="wrap"><span>Audit &amp; diagnostic</span><span>Pilotage des prestataires</span><span>Performance &amp; WFM</span><span>Qualité &amp; CSAT</span><span>IA appliquée</span></div></div>
+
+<section id="modeles">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Notre accompagnement</span>
+      <h2>Internalisé ou externalisé, <span class="it">nous restons à vos côtés</span></h2>
+      <p>Chaque organisation est différente. Nous adaptons notre intervention à votre modèle opérationnel, à vos équipes et à vos partenaires.</p>
+    </div>
+    <div class="models">
+      <article class="model rv">
+        <div class="img"><img src="https://images.unsplash.com/photo-1560264280-88b68371db39?w=1000&q=72&auto=format&fit=crop" alt="Plateau de centre de contact interne" loading="lazy"><span>CENTRE INTERNALISÉ</span></div>
+        <div class="body">
+          <h3>Renforcer vos équipes internes</h3>
+          <p>Nous structurons votre centre de contact pour gagner en efficacité, sans perdre la qualité de service.</p>
           <ul>
-            <li>Analyse des parcours et des canaux</li>
-            <li>Audit des indicateurs clés (SLA, DMT, FCR, CSAT)</li>
-            <li>Écoutes et évaluation qualité</li>
-            <li>Restitution aux décideurs</li>
+            <li>Organisation, management et rituels de pilotage</li>
+            <li>Dimensionnement, planification et adhérence</li>
+            <li>Grilles qualité, calibrage et coaching des conseillers</li>
+            <li>Outils, omnicanal et cas d'usage de l'IA</li>
           </ul>
-          <div class="out">Livrable : rapport de diagnostic et feuille de route priorisée</div>
-          <a href="#contact" class="btn btn-dark">Demander un diagnostic <span class="arrow">→</span></a>
-        </article>
-        <article class="offer feat rv d1">
-          <span class="badge">Le plus choisi</span>
-          <div class="dur">3 à 6 mois</div>
-          <h3>Programme de transformation</h3>
-          <p>Un accompagnement de bout en bout pour transformer durablement vos opérations.</p>
+        </div>
+      </article>
+      <article class="model rv d1">
+        <div class="img"><img src="https://images.unsplash.com/photo-1758518731706-be5d5230e5a5?w=1000&q=72&auto=format&fit=crop" alt="Réunion de pilotage avec un prestataire" loading="lazy"><span>CENTRE EXTERNALISÉ</span></div>
+        <div class="body">
+          <h3>Maîtriser vos prestataires</h3>
+          <p>Nous sécurisons votre relation avec vos prestataires, du choix du partenaire au pilotage de sa performance.</p>
           <ul>
-            <li>Diagnostic complet et cadrage des objectifs</li>
-            <li>Refonte des processus et de l'organisation</li>
-            <li>Grilles qualité, calibrage et coaching managers</li>
-            <li>Intégration des cas d'usage IA prioritaires</li>
-            <li>Comités de pilotage mensuels</li>
+            <li>Cahier des charges et appel d'offres</li>
+            <li>Engagements de service, pénalités et bonus</li>
+            <li>Audits qualité indépendants et écoutes</li>
+            <li>Comités de pilotage et plans d'amélioration</li>
           </ul>
-          <div class="out">Livrable : plan de transformation déployé et résultats mesurés</div>
-          <a href="#contact" class="btn btn-primary">Construire mon programme <span class="arrow">→</span></a>
-        </article>
-        <article class="offer rv d2">
-          <div class="dur">En continu</div>
-          <h3>Pilotage &amp; IA à la demande</h3>
-          <p>Un regard expert régulier pour garder le cap et faire évoluer vos dispositifs.</p>
-          <ul>
-            <li>Revue mensuelle de la performance</li>
-            <li>Tableaux de bord et alertes</li>
-            <li>Veille et tests de solutions IA</li>
-            <li>Appui ponctuel sur vos décisions</li>
-          </ul>
-          <div class="out">Livrable : reporting mensuel et recommandations actionnables</div>
-          <a href="#contact" class="btn btn-dark">En savoir plus <span class="arrow">→</span></a>
-        </article>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="resultats" class="kpi-sec">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Des résultats mesurables</span>
+      <h2>Des indicateurs qui <span class="it">progressent</span>, mois après mois</h2>
+      <p>Chaque action est reliée à un indicateur. Voici l'évolution type que nous visons sur un programme de six mois.</p>
+    </div>
+    <div class="kgrid">
+      <div class="board rv">
+        <div class="board-h"><h3>Taux de service et satisfaction</h3><div class="leg"><span><i style="background:#0b1f3a"></i>Taux de service</span><span><i style="background:#e0782f"></i>CSAT</span></div></div>
+        <svg viewBox="0 0 600 300" fill="none">
+          <g stroke="#ece8df"><path d="M50 40H590M50 100H590M50 160H590M50 220H590"/></g>
+          <g fill="#98a2b3" font-size="12" font-family="Manrope"><text x="10" y="44">100 %</text><text x="16" y="104">90 %</text><text x="16" y="164">80 %</text><text x="16" y="224">70 %</text></g>
+          <g fill="#0b1f3a">
+            <rect x="72" y="196" width="46" height="74" rx="6" opacity=".28"/><rect x="160" y="178" width="46" height="92" rx="6" opacity=".4"/><rect x="248" y="150" width="46" height="120" rx="6" opacity=".55"/><rect x="336" y="124" width="46" height="146" rx="6" opacity=".7"/><rect x="424" y="96" width="46" height="174" rx="6" opacity=".85"/><rect x="512" y="76" width="46" height="194" rx="6"/>
+          </g>
+          <path d="M95 210 L183 196 L271 168 L359 140 L447 112 L535 88" stroke="#e0782f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="#fff" stroke="#e0782f" stroke-width="3"><circle cx="95" cy="210" r="5"/><circle cx="183" cy="196" r="5"/><circle cx="271" cy="168" r="5"/><circle cx="359" cy="140" r="5"/><circle cx="447" cy="112" r="5"/><circle cx="535" cy="88" r="6"/></g>
+          <g fill="#667085" font-size="12" font-family="Manrope" text-anchor="middle"><text x="95" y="292">M1</text><text x="183" y="292">M2</text><text x="271" y="292">M3</text><text x="359" y="292">M4</text><text x="447" y="292">M5</text><text x="535" y="292">M6</text></g>
+        </svg>
+        <p class="note">Graphique illustratif : trajectoire type d'un programme de transformation, à adapter à chaque situation.</p>
+      </div>
+      <div class="mini">
+        <div class="m rv"><small>Taux de service</small><div class="v"><b>82 → 94 %</b><em class="up">▲</em></div><div class="bar"><i data-w="94"></i></div></div>
+        <div class="m rv d1"><small>Résolution au 1er contact</small><div class="v"><b>68 → 80 %</b><em class="up">▲</em></div><div class="bar"><i data-w="80"></i></div></div>
+        <div class="m rv"><small>Durée moyenne de traitement</small><div class="v"><b>−12 %</b><em class="dn">▼</em></div><div class="bar"><i data-w="62"></i></div></div>
+        <div class="m rv d1"><small>Coût par contact</small><div class="v"><b>−15 à 20 %</b><em class="dn">▼</em></div><div class="bar"><i data-w="70"></i></div></div>
+        <div class="m rv"><small>Taux de réitération</small><div class="v"><b>−25 %</b><em class="dn">▼</em></div><div class="bar"><i data-w="55"></i></div></div>
+        <div class="m rv d1"><small>Écoutes évaluées</small><div class="v"><b>×10</b><em class="up">▲</em></div><div class="bar"><i data-w="90"></i></div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="methode" class="process">
-    <div class="wrap">
-      <div class="head rv">
-        <span class="tag">Notre méthode</span>
-        <h2>Un accompagnement <span class="serif grad-text">pas à pas</span>, à vos côtés</h2>
-        <p>Nous ne livrons pas un rapport puis disparaissons : nous restons présents jusqu'à ce que les résultats soient visibles et durables.</p>
+<section id="roi">
+  <div class="wrap">
+    <div class="head ctr rv">
+      <span class="eyebrow">Simulateur de retour sur investissement</span>
+      <h2>Estimez vos <span class="it">gains</span> en 30 secondes</h2>
+      <p>Ajustez les curseurs selon votre activité. Le calcul repose sur des hypothèses prudentes, que nous affinons ensemble lors du diagnostic.</p>
+    </div>
+    <div class="roi rv">
+      <div class="roi-in">
+        <div class="field"><label>Contacts traités par mois <output id="o1"></output></label><input type="range" id="vol" min="2000" max="200000" step="1000" value="30000"></div>
+        <div class="field"><label>Coût moyen par contact <output id="o2"></output></label><input type="range" id="cpc" min="1" max="15" step="0.5" value="5"></div>
+        <div class="field"><label>Gain de productivité visé <output id="o3"></output></label><input type="range" id="gp" min="3" max="20" step="1" value="8"></div>
+        <div class="field"><label>Réduction des réitérations visée <output id="o4"></output></label><input type="range" id="rr" min="5" max="40" step="1" value="20"></div>
+        <div class="field"><label>Taux de réitération actuel <output id="o5"></output></label><input type="range" id="tr" min="5" max="35" step="1" value="15"></div>
+        <div class="field"><label>Budget de l'accompagnement <output id="o6"></output></label><input type="range" id="bud" min="10000" max="150000" step="5000" value="45000"></div>
+        <div class="hyp">Hypothèses : les gains de productivité réduisent le coût de traitement ; la baisse des réitérations supprime des contacts inutiles. Calcul indicatif, hors coûts de mise en œuvre technique.</div>
       </div>
-      <div class="timeline">
-        <div class="tl rv"><div class="n">01</div><div class="when">Semaine 1</div><h3>Écoute</h3><p>Comprendre vos enjeux, vos contraintes et vos ambitions.</p></div>
-        <div class="tl rv d1"><div class="n">02</div><div class="when">Semaines 2 à 4</div><h3>Diagnostic</h3><p>Terrain, données et écoutes pour objectiver la situation.</p></div>
-        <div class="tl rv d2"><div class="n">03</div><div class="when">Semaine 5</div><h3>Feuille de route</h3><p>Actions priorisées selon leur impact et leur effort.</p></div>
-        <div class="tl rv d3"><div class="n">04</div><div class="when">Mois 2 à 5</div><h3>Déploiement</h3><p>Ateliers, coaching et outillage aux côtés de vos équipes.</p></div>
-        <div class="tl rv d4"><div class="n">05</div><div class="when">En continu</div><h3>Ancrage</h3><p>Suivi des indicateurs et autonomie de vos équipes.</p></div>
+      <div class="roi-out">
+        <h3 style="font-size:19px">Économies annuelles estimées</h3>
+        <div class="big" id="sav">0 €</div>
+        <div style="font-size:14px">soit un retour sur investissement de <b id="roiv" style="color:#f3b25b">0</b> la première année</div>
+        <div class="res">
+          <div><small>Contacts évités par an</small><b id="ce">0</b></div>
+          <div><small>Délai de rentabilité</small><b id="pb">0 mois</b></div>
+        </div>
+        <div class="bars2">
+          <div class="b2"><span>Productivité</span><div class="t"><i id="g1"></i></div><span id="v1">0 €</span></div>
+          <div class="b2"><span>Réitérations</span><div class="t"><i id="g2"></i></div><span id="v2">0 €</span></div>
+          <div class="b2"><span>Investissement</span><div class="t"><i id="g3" style="background:#9fb0cc"></i></div><span id="v3">0 €</span></div>
+        </div>
+        <a href="#contact" class="btn btn-acc" style="margin-top:30px">Valider ces chiffres avec un expert →</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="ia" class="ai">
-    <div class="wrap">
-      <div class="head center rv">
-        <span class="tag">Intelligence artificielle</span>
-        <h2>L'IA au service de vos conseillers, <span class="serif grad-text">pas à leur place</span></h2>
-        <p>Nous identifions les cas d'usage qui créent réellement de la valeur, puis nous les déployons avec méthode et en toute conformité.</p>
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Expertises</span>
+      <h2>Six leviers pour transformer votre <span class="it">relation client</span></h2>
+    </div>
+    <div class="svc">
+      <div class="s rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div><h3>Audit 360°</h3><p>Parcours, indicateurs, organisation et qualité analysés pour objectiver la situation.</p></div>
+      <div class="s rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round"><path d="M17 20v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 20v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></svg></div><h3>Pilotage des prestataires</h3><p>Appels d'offres, engagements de service, comités et audits indépendants.</p></div>
+      <div class="s rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round"><path d="M3 20h18M6 16v-5M11 16V8M16 16v-3M20 16V5"/></svg></div><h3>Performance &amp; planification</h3><p>Taux de service, DMT, occupation et adhérence : dimensionner juste.</p></div>
+      <div class="s rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></div><h3>Qualité &amp; satisfaction</h3><p>Grilles d'évaluation, calibrage, CSAT, NPS et qualité rédactionnelle.</p></div>
+      <div class="s rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 9h6v6H9z"/></svg></div><h3>IA appliquée</h3><p>Analyse des appels, évaluation assistée et aide aux conseillers, avec des gains mesurés.</p></div>
+      <div class="s rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h3>Omnicanal</h3><p>Téléphone, e-mail, chat et WhatsApp : des canaux cohérents et pilotés ensemble.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="methode" class="kpi-sec">
+  <div class="wrap method">
+    <div class="ph rv"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1000&q=72&auto=format&fit=crop" alt="Atelier de travail en équipe" loading="lazy"></div>
+    <div>
+      <div class="head rv" style="margin-bottom:26px">
+        <span class="eyebrow">Notre méthode</span>
+        <h2>Un accompagnement <span class="it">pas à pas</span></h2>
+        <p>Nous restons présents jusqu'à ce que les résultats soient visibles et durables.</p>
       </div>
-      <div class="ai-grid">
-        <div class="ai-card rv"><div class="k">Analyse</div><h3>Comprendre chaque interaction</h3><p>Transcription des appels, détection des motifs de contact et des irritants à grande échelle.</p></div>
-        <div class="ai-card rv d1"><div class="k">Qualité</div><h3>Évaluer 100 % des échanges</h3><p>Évaluation qualité assistée par l'IA, calibrée sur vos propres grilles et validée par vos superviseurs.</p></div>
-        <div class="ai-card rv d2"><div class="k">Productivité</div><h3>Assister les conseillers</h3><p>Suggestions de réponses, synthèses automatiques et automatisation des demandes simples.</p></div>
-      </div>
-      <div class="guard rv">
-        <span>Conformité RGPD</span><span>Données hébergées en Europe</span><span>Humain dans la boucle</span><span>Gains mesurés avant généralisation</span>
+      <div class="steps">
+        <div class="step rv"><div class="n">01</div><div><div class="w">Semaine 1</div><h4>Écoute et cadrage</h4><p>Vos enjeux, votre modèle opérationnel et vos objectifs chiffrés.</p></div></div>
+        <div class="step rv"><div class="n">02</div><div><div class="w">Semaines 2 à 4</div><h4>Diagnostic</h4><p>Terrain, données, écoutes et contrats prestataires analysés.</p></div></div>
+        <div class="step rv"><div class="n">03</div><div><div class="w">Semaine 5</div><h4>Feuille de route</h4><p>Actions priorisées selon leur impact, leur coût et leur délai.</p></div></div>
+        <div class="step rv"><div class="n">04</div><div><div class="w">Mois 2 à 6</div><h4>Déploiement et pilotage</h4><p>À vos côtés, avec vos équipes et vos partenaires, jusqu'aux résultats.</p></div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="pourquoi">
-    <div class="wrap why">
-      <div class="rv">
-        <span class="tag">Pourquoi Perspective Conseil</span>
-        <h2 style="font-size:clamp(34px,4.2vw,54px);margin:18px 0">Un conseil <span class="serif grad-text">né du terrain</span></h2>
-        <p style="font-size:18px;color:var(--ink-2)">Perspective Conseil a été fondé par un dirigeant opérationnel qui pilote depuis plus de vingt ans des dispositifs de relation client. Nos recommandations sont pensées pour être appliquées, pas seulement présentées.</p>
-        <div class="pillars">
-          <div><h4>Opérationnel</h4><p>Des actions concrètes, réalistes et adaptées à vos équipes.</p></div>
-          <div><h4>Mesurable</h4><p>Chaque action est reliée à un indicateur et à un objectif chiffré.</p></div>
-          <div><h4>Engagé</h4><p>Un interlocuteur unique, présent du diagnostic aux résultats.</p></div>
-          <div><h4>Exigeant</h4><p>Qualité de service et qualité rédactionnelle au cœur de la démarche.</p></div>
+<section>
+  <div class="wrap">
+    <div class="head ctr rv"><span class="eyebrow">Formats</span><h2>Choisissez votre <span class="it">niveau d'accompagnement</span></h2></div>
+    <div class="offers">
+      <article class="o rv"><div class="d">2 à 4 semaines</div><h3>Diagnostic flash</h3><p>Un état des lieux objectif et une feuille de route priorisée.</p><ul><li>Audit des indicateurs et des parcours</li><li>Écoutes et évaluation qualité</li><li>Revue du contrat prestataire</li><li>Restitution à la direction</li></ul><a href="#contact" class="btn btn-line">Demander un diagnostic</a></article>
+      <article class="o f rv d1"><div class="d">3 à 6 mois · recommandé</div><h3>Programme de transformation</h3><p>Un accompagnement complet, du diagnostic aux résultats mesurés.</p><ul><li>Refonte de l'organisation et des processus</li><li>Sélection ou renégociation prestataire</li><li>Dispositif qualité et coaching</li><li>Cas d'usage IA prioritaires</li><li>Comités de pilotage mensuels</li></ul><a href="#contact" class="btn btn-acc">Construire mon programme</a></article>
+      <article class="o rv d2"><div class="d">Au mois</div><h3>Pilotage externalisé</h3><p>Un regard expert régulier sur votre centre et vos prestataires.</p><ul><li>Revue mensuelle de la performance</li><li>Audits qualité indépendants</li><li>Animation des comités prestataires</li><li>Recommandations actionnables</li></ul><a href="#contact" class="btn btn-line">En savoir plus</a></article>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap fd">
+    <div class="rv">
+      <span class="eyebrow">Le fondateur</span>
+      <blockquote>« Un centre de contact performant se mesure, se pilote et s'améliore chaque jour, avec les équipes et les partenaires. »</blockquote>
+      <div class="sig"><div class="av">TL</div><div><b>Tarik Lebbar</b><span>Fondateur · plus de vingt ans de direction des opérations en centres de contact</span></div></div>
+    </div>
+    <div class="pl rv d1">
+      <div><b>Opérationnel</b><span>Des actions applicables dès le lendemain.</span></div>
+      <div><b>Mesurable</b><span>Chaque action reliée à un indicateur.</span></div>
+      <div><b>Indépendant</b><span>Aucun lien avec les prestataires ni les éditeurs.</span></div>
+      <div><b>Engagé</b><span>Un interlocuteur unique, du diagnostic aux résultats.</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="head ctr rv"><span class="eyebrow">Questions fréquentes</span><h2>Avant de démarrer</h2></div>
+    <div class="faq">
+      <details class="rv"><summary>Intervenez-vous si notre service client est déjà externalisé ?</summary><p>Oui. Nous vous aidons à piloter votre prestataire : suivi des engagements de service, audits qualité indépendants, comités de pilotage et, si nécessaire, renégociation ou nouvel appel d'offres.</p></details>
+      <details class="rv"><summary>Les chiffres du simulateur sont-ils garantis ?</summary><p>Non. Le simulateur donne un ordre de grandeur à partir de vos données et d'hypothèses prudentes. Le diagnostic permet ensuite d'établir un objectif chiffré et réaliste pour votre organisation.</p></details>
+      <details class="rv"><summary>Êtes-vous liés à un prestataire ou à un éditeur ?</summary><p>Non. Notre indépendance nous permet de recommander la solution la plus adaptée, sans conflit d'intérêts.</p></details>
+      <details class="rv"><summary>Comment protégez-vous nos données ?</summary><p>Nous travaillons sous accord de confidentialité, dans le respect du RGPD, en limitant l'accès aux données au strict nécessaire.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:20px">
+  <div class="wrap">
+    <div class="ct rv">
+      <div class="l">
+        <span class="eyebrow" style="color:#f3b25b">Contact</span>
+        <h2>Parlons de votre centre de contact</h2>
+        <p>Un premier échange de 30 minutes, sans engagement, pour comprendre vos enjeux et identifier les premiers leviers.</p>
+        <div class="co">
+          <a href="mailto:tarikperspective@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>tarikperspective@gmail.com</a>
+          <a href="tel:+33662318369"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>+33 6 62 31 83 69</a>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0114 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>18 rue Mesnil, 75016 Paris</div>
         </div>
       </div>
-      <div class="founder rv d2">
-        <p class="q">« Une bonne expérience client ne se décrète pas : elle se mesure, se pilote et s'améliore chaque jour, avec les équipes. »</p>
-        <div class="who"><div class="avatar">TL</div><div><b>Tarik Lebbar</b><span>Fondateur, Perspective Conseil</span></div></div>
-      </div>
+      <form id="f">
+        <div class="r2"><label>Nom<input name="nom" required autocomplete="name"></label><label>Entreprise<input name="entreprise" autocomplete="organization"></label></div>
+        <div class="r2"><label>E-mail<input name="email" type="email" required autocomplete="email"></label><label>Téléphone<input name="tel" type="tel" autocomplete="tel"></label></div>
+        <label>Votre centre de contact<select name="modele"><option>Internalisé</option><option>Externalisé (prestataire)</option><option>Hybride</option><option>En projet</option></select></label>
+        <label>Message<textarea name="message" placeholder="Votre contexte en quelques lignes"></textarea></label>
+        <button class="btn btn-acc" type="submit" style="justify-content:center">Envoyer ma demande</button>
+        <p class="fine">Votre demande s'ouvre dans votre messagerie. Vos données servent uniquement à vous répondre.</p>
+      </form>
     </div>
-  </section>
-
-  <section id="faq" style="padding-top:0">
-    <div class="wrap">
-      <div class="head center rv">
-        <span class="tag">Questions fréquentes</span>
-        <h2>Tout ce qu'il faut savoir avant de démarrer</h2>
-      </div>
-      <div class="faq">
-        <details class="rv"><summary>À quel type d'entreprise vous adressez-vous ?</summary><p>Nous accompagnons les entreprises qui disposent d'un service client interne ou externalisé, quelle que soit leur taille, et qui souhaitent en améliorer la performance, la qualité ou l'efficacité.</p></details>
-        <details class="rv"><summary>Combien de temps dure un accompagnement ?</summary><p>Un diagnostic express dure de deux à quatre semaines. Un programme de transformation s'étend généralement sur trois à six mois. Le pilotage à la demande s'organise au mois, sans engagement de durée.</p></details>
-        <details class="rv"><summary>Faut-il déjà utiliser l'IA pour travailler avec vous ?</summary><p>Non. Nous partons de votre situation actuelle. L'IA n'est proposée que lorsqu'elle apporte un gain réel, mesuré lors d'un test avant tout déploiement.</p></details>
-        <details class="rv"><summary>Comment garantissez-vous la confidentialité des données ?</summary><p>Nous travaillons dans le respect du RGPD, sous accord de confidentialité, en privilégiant des solutions hébergées en Europe et en limitant l'accès aux données au strict nécessaire.</p></details>
-        <details class="rv"><summary>Comment démarrer ?</summary><p>Un premier échange de 30 minutes, sans engagement, permet de comprendre vos enjeux et de vous proposer le format d'accompagnement le plus adapté.</p></details>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="cta">
-    <div class="wrap">
-      <div class="cta-box rv">
-        <div>
-          <span class="tag">Contact</span>
-          <h2>Parlons de votre <span class="serif grad-text">relation client</span></h2>
-          <p>Un premier échange de 30 minutes, sans engagement, pour comprendre vos enjeux et identifier les premiers leviers.</p>
-          <div class="coords">
-            <a href="mailto:contact@perspectiveconseil.fr"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>contact@perspectiveconseil.fr</a>
-            <a href="tel:+33662318369"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>+33 6 62 31 83 69</a>
-            <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0114 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>18 rue Mesnil, 75016 Paris</div>
-          </div>
-        </div>
-        <form id="f">
-          <div class="row2">
-            <label>Nom<input name="nom" required autocomplete="name"></label>
-            <label>Entreprise<input name="entreprise" autocomplete="organization"></label>
-          </div>
-          <div class="row2">
-            <label>E-mail<input name="email" type="email" required autocomplete="email"></label>
-            <label>Téléphone<input name="tel" type="tel" autocomplete="tel"></label>
-          </div>
-          <label>Votre besoin
-            <select name="besoin">
-              <option>Diagnostic express</option>
-              <option>Programme de transformation</option>
-              <option>Pilotage et IA à la demande</option>
-              <option>Autre demande</option>
-            </select>
-          </label>
-          <label>Message<textarea name="message" placeholder="Décrivez votre contexte en quelques lignes"></textarea></label>
-          <button class="btn btn-primary" type="submit" style="justify-content:center">Envoyer ma demande <span class="arrow">→</span></button>
-          <p class="fine">Votre demande s'ouvre dans votre messagerie. Vos données servent uniquement à vous répondre.</p>
-        </form>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="fcols">
-      <div>
-        <a href="#" class="logo"><span class="logo-mark">P</span>Perspective Conseil</a>
-        <p>Accompagnement des directions de la relation client : diagnostic, transformation, pilotage de la performance et intelligence artificielle.</p>
-      </div>
-      <div>
-        <h4>Coordonnées</h4>
-        <p>18 rue Mesnil<br>75016 Paris<br><a href="mailto:contact@perspectiveconseil.fr">contact@perspectiveconseil.fr</a></p>
-      </div>
-      <div>
-        <h4>Informations légales</h4>
-        <details class="ml">
-          <summary>Mentions légales</summary>
-          <div>
-            <strong>Éditeur :</strong> Perspective Conseil, SARL au capital de 1 000 €<br>
-            Siège social : 18 rue Mesnil, 75016 Paris<br>
-            RCS Paris 817 452 220<br>
-            TVA intracommunautaire : FR53817452220<br>
-            Directeur de la publication : Tarik Lebbar, gérant<br>
-            Contact : contact@perspectiveconseil.fr<br><br>
-            <strong>Hébergeur :</strong> Railway Corp., San Francisco, Californie, États-Unis — railway.com<br><br>
-            <strong>Données personnelles :</strong> les informations transmises via ce site sont utilisées uniquement pour répondre à vos demandes. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en écrivant à contact@perspectiveconseil.fr. Ce site ne dépose aucun cookie de suivi.
-          </div>
-        </details>
+    <div class="fc">
+      <div><a href="#" class="logo"><i>P</i>Perspective Conseil</a><p>Conseil et accompagnement des centres de contact internalisés et externalisés : audit, pilotage des prestataires, performance, qualité, IA et retour sur investissement.</p></div>
+      <div><h4>Coordonnées</h4><p>18 rue Mesnil<br>75016 Paris<br><a href="mailto:tarikperspective@gmail.com">tarikperspective@gmail.com</a></p></div>
+      <div><h4>Informations légales</h4>
+        <details class="ml"><summary>Mentions légales</summary><div>
+          <strong>Éditeur :</strong> Perspective Conseil, SARL au capital de 1 000 €<br>
+          Siège social : 18 rue Mesnil, 75016 Paris<br>
+          RCS Paris 817 452 220<br>
+          TVA intracommunautaire : FR53817452220<br>
+          Directeur de la publication : Tarik Lebbar, gérant<br>
+          Contact : tarikperspective@gmail.com<br><br>
+          <strong>Hébergeur :</strong> Railway Corp., San Francisco, Californie, États-Unis — railway.com<br><br>
+          <strong>Crédits photos :</strong> Unsplash (licence Unsplash).<br><br>
+          <strong>Données personnelles :</strong> les informations transmises via ce site sont utilisées uniquement pour répondre à vos demandes. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en écrivant à tarikperspective@gmail.com. Ce site ne dépose aucun cookie de suivi.
+        </div></details>
       </div>
     </div>
-    <div class="fbottom">
-      <span>© 2026 Perspective Conseil. Tous droits réservés.</span>
-      <span>SARL — RCS Paris 817 452 220</span>
-    </div>
+    <div class="fb"><span>© 2026 Perspective Conseil. Tous droits réservés.</span><span>SARL — RCS Paris 817 452 220</span></div>
   </div>
 </footer>
 
 <script>
 (function(){
-  var h=document.getElementById('top');
-  function onScroll(){ if(window.scrollY>20){h.classList.add('scrolled')}else{h.classList.remove('scrolled')} }
-  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
-
-  var b=document.getElementById('burger'), m=document.getElementById('menu');
-  b.addEventListener('click',function(){ m.classList.toggle('open'); h.classList.add('scrolled'); });
-  m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ m.classList.remove('open'); }); });
+  var bg=document.getElementById('bg'),mn=document.getElementById('menu');
+  bg.addEventListener('click',function(){mn.classList.toggle('open')});
+  mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open')})});
 
   var els=document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    },{threshold:.12});
-    els.forEach(function(el){ io.observe(el); });
-  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+  function show(e){e.classList.add('in');e.querySelectorAll('.bar i').forEach(function(b){b.style.width=b.dataset.w+'%'})}
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target)}})},{threshold:.15});els.forEach(function(e){io.observe(e)})}else{els.forEach(show)}
 
-  document.getElementById('f').addEventListener('submit',function(ev){
-    ev.preventDefault();
-    var d=new FormData(ev.target);
-    var subject='Demande de contact – '+(d.get('besoin')||'');
-    var body='Nom : '+d.get('nom')+'\nEntreprise : '+d.get('entreprise')+'\nE-mail : '+d.get('email')+'\nTéléphone : '+d.get('tel')+'\nBesoin : '+d.get('besoin')+'\n\n'+d.get('message');
-    window.location.href='mailto:contact@perspectiveconseil.fr?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-  });
+  function eur(v){return Math.round(v).toLocaleString('fr-FR')+' €'}
+  function $(i){return document.getElementById(i)}
+  function calc(){
+    var vol=+$('vol').value,cpc=+$('cpc').value,gp=+$('gp').value/100,rr=+$('rr').value/100,tr=+$('tr').value/100,bud=+$('bud').value;
+    $('o1').textContent=vol.toLocaleString('fr-FR');$('o2').textContent=cpc.toLocaleString('fr-FR')+' €';
+    $('o3').textContent=Math.round(gp*100)+' %';$('o4').textContent=Math.round(rr*100)+' %';$('o5').textContent=Math.round(tr*100)+' %';$('o6').textContent=eur(bud);
+    var annual=vol*12, avoided=annual*tr*rr, s2=avoided*cpc, s1=(annual-avoided)*cpc*gp, tot=s1+s2;
+    $('sav').textContent=eur(tot);$('ce').textContent=Math.round(avoided).toLocaleString('fr-FR');
+    var roi=bud>0?(tot-bud)/bud:0;$('roiv').textContent=(roi>=0?'+':'')+Math.round(roi*100)+' %';
+    $('pb').textContent=tot>0?Math.max(1,Math.ceil(bud/(tot/12)))+' mois':'—';
+    var mx=Math.max(s1,s2,bud,1);$('g1').style.width=(s1/mx*100)+'%';$('g2').style.width=(s2/mx*100)+'%';$('g3').style.width=(bud/mx*100)+'%';
+    $('v1').textContent=eur(s1);$('v2').textContent=eur(s2);$('v3').textContent=eur(bud);
+  }
+  ['vol','cpc','gp','rr','tr','bud'].forEach(function(i){$(i).addEventListener('input',calc)});calc();
+
+  $('f').addEventListener('submit',function(ev){ev.preventDefault();var d=new FormData(ev.target);
+    var s='Demande de contact – centre de contact '+(d.get('modele')||'');
+    var b='Nom : '+d.get('nom')+'\nEntreprise : '+d.get('entreprise')+'\nE-mail : '+d.get('email')+'\nTéléphone : '+d.get('tel')+'\nModèle : '+d.get('modele')+'\n\n'+d.get('message');
+    window.location.href='mailto:tarikperspective@gmail.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(b)});
 })();
 </script>
 </body>
